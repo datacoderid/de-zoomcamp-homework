@@ -1,0 +1,13 @@
+command:
+(base) alexander@de-zoomcamp:~$ gcloud --version
+
+output:
+Google Cloud SDK 368.0.0
+alpha 2022.01.07
+beta 2022.01.07
+bq 2.0.72
+core 2022.01.07
+gsutil 5.6
+minikube 1.24.0
+skaffold 1.35.1
+

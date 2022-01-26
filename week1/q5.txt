@@ -1,0 +1,15 @@
+sql:
+SELECT COALESCE(z."Zone",'Unknown') AS "Zone", COUNT(1)
+FROM yellow_taxi_data ytd
+LEFT JOIN zones z ON ytd."DOLocationID" = z."LocationID"
+WHERE tpep_pickup_datetime::date = '2021-01-14'
+AND ytd."PULocationID" IN
+(
+	SELECT "LocationID" FROM zones
+	WHERE "Zone" = 'Central Park'
+)
+GROUP BY 1
+ORDER BY 2 DESC
+
+output:
+"Upper East Side South"	97

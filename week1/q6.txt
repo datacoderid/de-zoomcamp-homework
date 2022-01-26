@@ -1,0 +1,10 @@
+sql:
+SELECT COALESCE(puzone."Zone",'Unknown') || ' / ' || COALESCE(dozone."Zone",'Unknown') AS Location, AVG(Total_Amount)
+FROM yellow_taxi_data ytd
+LEFT JOIN zones puzone ON ytd."PULocationID" = puzone."LocationID"
+LEFT JOIN zones dozone ON ytd."DOLocationID" = dozone."LocationID"
+GROUP BY 1
+ORDER BY 2 DESC
+
+output:
+"Alphabet City / Unknown"	2292.4
